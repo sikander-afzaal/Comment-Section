@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.comment {
+  display: flex;
+  width: 100%;
+  background-color: white;
+  height: auto;
+  /* box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.1); */
+  padding: 25px 0px;
+  border-radius: 15px;
+}
+.wrapper-cmt {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+  gap: 20px;
+}
+.replies {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-end;
+  width: 100%;
+}
+.replies::before {
+  content: "";
+  background-color: hsl(223, 19%, 93%);
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  left: 4%;
+}
+.left {
+  flex: 0.1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.wrap {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  background-color: hsl(223, 19%, 93%);
+  width: 60%;
+  height: 80%;
+  border-radius: 10px;
+}
+.amount {
+  color: hsl(238, 40%, 52%);
+  font-weight: 500;
+  font-size: 18px;
+}
+.img-icon {
+  cursor: pointer;
+  padding: 5px;
+}
+.right {
+  flex: 0.9;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 1rem;
+}
+.right__top {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0px 20px 0px 0px;
+}
+.profile,
+.reply {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile {
+  width: 50%;
+  justify-content: flex-start;
+}
+.profile-img {
+  width: 13%;
+  margin-right: 20px;
+}
+.name {
+  margin-right: 10px;
+}
+.date {
+  color: hsl(211, 10%, 45%);
+}
+.reply {
+  cursor: pointer;
+}
+.reply-para {
+  color: hsl(238, 40%, 52%);
+  font-weight: 500;
+  font-size: 18px;
+  margin-left: 5px;
+}
+.main-cmt {
+  color: hsl(211, 10%, 45%);
+  font-size: 17px;
+  line-height: 28px;
+}
+.right__bottom {
+  padding-right: 16px;
+  width: 100%;
+}
+.you {
+  margin-right: 10px;
+  background-color: hsl(238, 40%, 52%);
+  color: white;
+  font-size: 14px;
+  padding: 5px 8px;
+  display: none;
+  font-weight: 500;
+}
+.show {
+  display: block;
+}
+.add-reply {
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: white;
+  padding: 25px 10px;
+  border-radius: 15px;
+  display: none;
+}
+.delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.delete-para {
+  color: hsl(358, 79%, 66%);
+  font-weight: 500;
+  font-size: 18px;
+  margin-left: 5px;
+}
+.delete_edit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
