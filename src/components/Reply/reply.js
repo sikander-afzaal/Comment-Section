@@ -15,6 +15,7 @@ function Reply({
   replyingTo,
   currentUser,
   addReply,
+  openModal,
 }) {
   const [showBox, setShow] = useState(false);
   const [value, setValue] = useState("");
@@ -76,7 +77,12 @@ function Reply({
               </div>
             ) : (
               <div className="delete_edit">
-                <div className="delete">
+                <div
+                  onClick={() => {
+                    openModal(true);
+                  }}
+                  className="delete"
+                >
                   <img src={del} alt="5" />
                   <p className="delete-para">Delete</p>
                 </div>

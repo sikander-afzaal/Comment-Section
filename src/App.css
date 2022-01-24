@@ -61,3 +61,66 @@
   color: hsl(211, 10%, 45%);
   font-size: 16px;
 }
+.delete-modal {
+  position: absolute;
+  background-color: white;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  background-color: white;
+  box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+  padding: 40px;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+  top: -100%;
+  transition: all 0.45s ease-in-out;
+  transition-delay: 0.25s;
+  border-radius: 20px;
+}
+.delete-modal p {
+  color: hsl(211, 10%, 45%);
+  font-size: 17px;
+  line-height: 28px;
+}
+.overlay {
+  top: -100%;
+  width: 100%;
+  transition: all 0.45s ease-in-out;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  bottom: 0;
+}
+.modal-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.cancel,
+.delete-btn {
+  border: none;
+  padding: 15px 26px;
+  font-size: 1.1rem;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.cancel {
+  background-color: hsl(211, 10%, 45%);
+}
+.delete-btn {
+  background-color: hsl(358, 79%, 66%);
+}
+.open-modal {
+  top: 50%;
+}
+.overlay-open {
+  top: 0;
+}

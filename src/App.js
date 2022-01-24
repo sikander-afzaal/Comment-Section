@@ -7,12 +7,26 @@ function App() {
   const [cmt, setCmt] = useState(data.comments);
   const [user, setUser] = useState(data.currentUser);
   const [value, setValue] = useState("");
+  const [modal, setModal] = useState(false);
+  const [key, setKey] = useState("");
   const onChange = (e) => {
     setValue((prev) => {
       return e.target.value;
     });
   };
-  const addComment = () => {
+  const dataCollector = (key) => {
+    setKey(key);
+  };
+  const deleteComment = (e) => {
+    console.log(key);
+    setCmt((prev) => {
+      return prev.filter((elem, index) => {
+        return index !== key;
+      });
+    });
+  };
+  const addComment = (e) => {
+    e.preventDefault();
     const textArea = value;
     const comment = {
       id: 1,
@@ -35,8 +49,28 @@ function App() {
   };
   return (
     <div className="wrap-app">
+      <div className={`overlay ${modal ? "overlay-open" : ""}`}></div>
       <div className="app">
-        {console.log(cmt)}
+        <div className={`delete-modal ${modal ? "open-modal" : ""}`}>
+          <h1>Delete Comment</h1>
+          <p>
+            Are you sure you want to delete this comment? This will remove the
+            comment and this can't be undone
+          </p>
+          <div className="modal-btn">
+            <button
+              onClick={() => {
+                setModal(false);
+              }}
+              className="cancel"
+            >
+              NO, CANCEL
+            </button>
+            <button onClick={deleteComment} className="delete-btn">
+              YES, DELETE
+            </button>
+          </div>
+        </div>
         {cmt.map((comment, index) => {
           return (
             <Comment
@@ -48,6 +82,9 @@ function App() {
               score={comment.score}
               replies={comment.replies}
               currentUser={user.username}
+              openModal={setModal}
+              findKey={dataCollector}
+              index={index}
             />
           );
         })}

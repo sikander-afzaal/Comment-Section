@@ -7,7 +7,18 @@ import edit from "./photos/icon-edit.svg";
 import del from "./photos/icon-delete.svg";
 import pic from "./photos/image-amyrobson.png";
 import Reply from "../Reply/reply.js";
-function Comment({ content, date, image, name, score, replies, currentUser }) {
+function Comment({
+  index,
+  content,
+  date,
+  image,
+  name,
+  score,
+  replies,
+  currentUser,
+  openModal,
+  findKey,
+}) {
   const [showBox, setShow] = useState(false);
   const [allReplies, setReplies] = useState(replies);
   const [value, setValue] = useState("");
@@ -92,7 +103,13 @@ function Comment({ content, date, image, name, score, replies, currentUser }) {
               </div>
             ) : (
               <div className="delete_edit">
-                <div className="delete">
+                <div
+                  onClick={() => {
+                    openModal(true);
+                    findKey(index);
+                  }}
+                  className="delete"
+                >
                   <img src={del} alt="5" />
                   <p className="delete-para">Delete</p>
                 </div>
@@ -161,6 +178,7 @@ function Comment({ content, date, image, name, score, replies, currentUser }) {
               replyingTo={re.replyingTo}
               currentUser={currentUser}
               addReply={addReply}
+              openModal={openModal}
             />
           );
         })}
